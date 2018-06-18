@@ -45,10 +45,15 @@ class App extends React.Component {
   render () {
     const hunters = Object.keys(this.state.posts).map((key) => {
       const hunter = this.state.posts[key]
+      let profilePicture = hunter.image_url
+      if (profilePicture) {
+        profilePicture = profilePicture.replace(/w=original/g, 'w=100')
+        profilePicture = profilePicture.replace(/h=original/g, 'h=100&fit=crop')
+      }
 
       return (
         <div key={key} className='img'>
-          <img src='https://gradientjoy.com/100' alt='' className='card-img-top' id={`popover${key}`} onClick={this.toggle.bind(this, key)} />
+          <img src={profilePicture} alt='' className='card-img-top' id={`popover${key}`} onClick={this.toggle.bind(this, key)} />
 
           <Popover placement='bottom' isOpen={this.state.popoverOpen[key]} target={`popover${key}`} toggle={this.toggle.bind(this, key)}>
             <PopoverHeader>{hunter.name}</PopoverHeader>
