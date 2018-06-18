@@ -6,7 +6,8 @@
     "build": "parcel build ./src/html/index.html --out-dir ./docs --public-url ./ --no-source-maps"
   },
   "engines": {
-    "node": "^9.8.0"
+    "node": "^9.8.0",
+    "npm": "^5.6.0"
   },
   "license": "MIT",
   "dependencies": {
