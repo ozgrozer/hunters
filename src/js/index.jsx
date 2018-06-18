@@ -47,7 +47,7 @@ class App extends React.Component {
       const hunter = this.state.posts[key]
 
       return (
-        <div key={key} className='col-2'>
+        <div key={key} className='img'>
           <img src='https://gradientjoy.com/100' alt='' className='card-img-top' id={`popover${key}`} onClick={this.toggle.bind(this, key)} />
 
           <Popover placement='bottom' isOpen={this.state.popoverOpen[key]} target={`popover${key}`} toggle={this.toggle.bind(this, key)}>
@@ -61,9 +61,9 @@ class App extends React.Component {
     })
 
     return (
-      <div className='row'>
+      <React.Fragment>
         {hunters}
-      </div>
+      </React.Fragment>
     )
   }
 }
