@@ -1,16 +1,5 @@
-# react-parcel
+# hunters
 
-Install dependencies.
-```
-yarn install
-```
+Top PH hunters
 
-Start development.
-```
-yarn start
-```
-
-Build the app.
-```
-yarn build
-```
+[https://ozgrozer.github.io/hunters/](https://ozgrozer.github.io/hunters/)
