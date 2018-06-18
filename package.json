@@ -5,6 +5,9 @@
     "prebuild": "cd ./docs && find . -maxdepth 1 -not -path '.' -not -name 'hunters' -not -name 'CNAME' -exec rm -f {} +",
     "build": "parcel build ./src/html/index.html --out-dir ./docs --public-url ./ --no-source-maps"
   },
+  "engines": {
+    "node": "^9.8.0"
+  },
   "license": "MIT",
   "dependencies": {
     "babel-preset-env": "^1.7.0",
@@ -14,6 +17,6 @@
     "parcel-bundler": "^1.9.1",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
-    "reactstrap": "^6.0.1"
+    "reactstrap": "^6.1.0"
   }
 }
