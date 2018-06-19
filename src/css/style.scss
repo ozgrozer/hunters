@@ -1,21 +1,128 @@
 @import './bootstrapComponents';
 
+/* Breakpoints (Bootstrap defaults) */
+$xsBreakpoint: map-get($grid-breakpoints, 'sm') - 1;/* max: 575px */
+$smBreakpoint: map-get($grid-breakpoints, 'sm');/* min: 576px */
+$mdBreakpoint: map-get($grid-breakpoints, 'md');/* min: 768px */
+$lgBreakpoint: map-get($grid-breakpoints, 'lg');/* min: 992px */
+$xlBreakpoint: map-get($grid-breakpoints, 'xl');/* min: 1200px */
+
 body {
-  width: 500px;
   margin: auto;
-  padding-top: 10px;
-  padding-bottom: 10px;
 }
 
 .img {
   float: left;
-  width: 100px;
-  height: 100px;
 
   img {
     width: 100%;
     height: 100%;
-    padding: 10px;
     border-radius: 50%;
+  }
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: #{$xsBreakpoint}) {
+  $padding: 5px;
+  $bodyWidth: calc(100% - (#{$padding} * 2));
+  $imageWidthAndHeight: 20%;
+
+  body {
+    width: $bodyWidth;
+    padding-top: $padding;
+    padding-bottom: $padding;
+  }
+
+  .img {
+    width: $imageWidthAndHeight;
+    height: $imageWidthAndHeight;
+
+    img {
+      padding: $padding;
+    }
+  }
+}
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: #{$smBreakpoint}) {
+  $padding: 10px;
+  $bodyWidth: 500px;
+  $imageWidthAndHeight: 100px;
+
+  body {
+    width: $bodyWidth;
+    padding-top: $padding;
+    padding-bottom: $padding;
+  }
+
+  .img {
+    width: $imageWidthAndHeight;
+    height: $imageWidthAndHeight;
+
+    img {
+      padding: $padding;
+    }
+  }
+}
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: #{$mdBreakpoint}) {
+  $padding: 7px;
+  $bodyWidth: 700px;
+  $imageWidthAndHeight: 70px;
+
+  body {
+    width: $bodyWidth;
+    padding-top: $padding;
+    padding-bottom: $padding;
+  }
+
+  .img {
+    width: $imageWidthAndHeight;
+    height: $imageWidthAndHeight;
+
+    img {
+      padding: $padding;
+    }
+  }
+}
+/* Large devices (desktops, 992px and up) */
+@media (min-width: #{$lgBreakpoint}) {
+  $padding: 9px;
+  $bodyWidth: 900px;
+  $imageWidthAndHeight: 90px;
+
+  body {
+    width: $bodyWidth;
+    padding-top: $padding;
+    padding-bottom: $padding;
+  }
+
+  .img {
+    width: $imageWidthAndHeight;
+    height: $imageWidthAndHeight;
+
+    img {
+      padding: $padding;
+    }
+  }
+}
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: #{$xlBreakpoint}) {
+  $padding: 10px;
+  $bodyWidth: 1000px;
+  $imageWidthAndHeight: 100px;
+
+  body {
+    width: $bodyWidth;
+    padding-top: $padding;
+    padding-bottom: $padding;
+  }
+
+  .img {
+    width: $imageWidthAndHeight;
+    height: $imageWidthAndHeight;
+
+    img {
+      padding: $padding;
+    }
   }
 }
