@@ -56,7 +56,7 @@ class App extends React.Component {
           <img src={profilePicture} alt='' className='card-img-top' id={`popover${key}`} onClick={this.toggle.bind(this, key)} />
 
           <Popover placement='bottom' isOpen={this.state.popoverOpen[key]} target={`popover${key}`} toggle={this.toggle.bind(this, key)}>
-            <PopoverHeader>{hunter.name}</PopoverHeader>
+            <PopoverHeader># {hunter.name}</PopoverHeader>
             <PopoverBody>
               Posts: {hunter.posts_count}
             </PopoverBody>
