@@ -56,9 +56,41 @@ class App extends React.Component {
           <img src={profilePicture} alt='' className='card-img-top' id={`popover${key}`} onClick={this.toggle.bind(this, key)} />
 
           <Popover placement='bottom' isOpen={this.state.popoverOpen[key]} target={`popover${key}`} toggle={this.toggle.bind(this, key)}>
-            <PopoverHeader># {hunter.name}</PopoverHeader>
+            <PopoverHeader># {parseInt(key) + 1}</PopoverHeader>
             <PopoverBody>
-              Posts: {hunter.posts_count}
+              <table>
+                <tbody>
+                  <tr>
+                    <td colspan='2'>
+                      <a href={hunter.profile_url} target='_blank' className='name'>{hunter.name}</a>
+                      <div className='headline'>{hunter.headline}</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan='2'>&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td>Posts:</td>
+                    <td>{hunter.posts_count}</td>
+                  </tr>
+                  <tr>
+                    <td>Followers:</td>
+                    <td>{hunter.followers_count}</td>
+                  </tr>
+                  <tr>
+                    <td>Maker of:</td>
+                    <td>{hunter.maker_of_count}</td>
+                  </tr>
+                  {
+                    hunter.twitter_username ? (
+                      <tr>
+                        <td>Twitter:</td>
+                        <td><a href={`https://twitter.com/${hunter.twitter_username}`} target='_blank'>@{hunter.twitter_username}</a></td>
+                      </tr>
+                    ) : ''
+                  }
+                </tbody>
+              </table>
             </PopoverBody>
           </Popover>
         </div>
